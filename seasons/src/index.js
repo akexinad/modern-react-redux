@@ -9,6 +9,7 @@ export default class App extends Component {
     this.state = ({
       latitude: null,
       longitude: null,
+      errorMessage: ''
     })
   }
 
@@ -20,16 +21,22 @@ export default class App extends Component {
           longitude: position.coords.longitude
         })
       },
-      error => console.log(error)
+      error => {
+        this.setState({
+          errorMessage: error.message
+        })
+      }
     )
-
   }
 
   render() {
     return (
       <div>
         Latitude: { this.state.latitude }
+        <br/>
         Longitude: { this.state.longitude }
+        <br/>
+        Error: { this.state.errorMessage }
       </div>
     )
   }

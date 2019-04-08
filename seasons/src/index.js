@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import SeasonDisplay from './SeasonDisplay.js'
+import Spinner from './Spinner.js'
 
 export default class App extends Component {
   constructor() {
@@ -46,9 +47,7 @@ export default class App extends Component {
     }
 
     return (
-      <div>
-        Loading...
-      </div>
+      <Spinner />
     )
   }
 }

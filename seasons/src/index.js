@@ -7,7 +7,8 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = ({
-
+      latitude: null,
+      longitude: null,
     })
   }
 
@@ -16,6 +17,7 @@ export default class App extends Component {
       position => console.log(position),
       error => console.log(error)
     )
+
     return (
       <div>
         Latitude:

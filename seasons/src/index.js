@@ -12,16 +12,24 @@ export default class App extends Component {
     })
   }
 
-  render() {
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
-      position => console.log(position),
+      position => {
+        this.setState({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude
+        })
+      },
       error => console.log(error)
     )
 
+  }
+
+  render() {
     return (
       <div>
-        Latitude:
-        Longitude:
+        Latitude: { this.state.latitude }
+        Longitude: { this.state.longitude }
       </div>
     )
   }

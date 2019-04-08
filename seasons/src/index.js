@@ -30,13 +30,26 @@ export default class App extends Component {
   }
 
   render() {
-    return (
-      <div>
+    if (this.state.errorMessage && !this.state.latitude) {
+      return (
+        <div>Error: { this.state.errorMessage }</div>
+      )
+    }
+
+    if (!this.state.errorMessage && this.state.latitude) {
+      return (
+        <div>
         Latitude: { this.state.latitude }
         <br/>
         Longitude: { this.state.longitude }
         <br/>
-        Error: { this.state.errorMessage }
+        </div>
+      )
+    }
+
+    return (
+      <div>
+        Loading...
       </div>
     )
   }

@@ -12,6 +12,10 @@ export default class App extends Component {
     selectedVideo: null,
   }
 
+  componentDidMount() {
+    this._onFormSubmit('George Daniels')
+  }
+
   _onFormSubmit = async (searchTerm) => {
     const response = await youtube.get('/search', {
       params: {
@@ -20,7 +24,8 @@ export default class App extends Component {
     })
 
     this.setState({
-      videoList: response.data.items
+      videoList: response.data.items,
+      selectedVideo: response.data.items[0]
     })
   }
 

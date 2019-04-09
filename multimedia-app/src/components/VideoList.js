@@ -7,7 +7,7 @@ export default function VideoList ({ videoList, onVideoSelect }) {
   const renderVideos = videoList.map( video => {
     return (
       <VideoItem
-        key={ video.etag }
+        key={ video.id.videoId }
         video={ video }
         onVideoSelect={ onVideoSelect }
       />

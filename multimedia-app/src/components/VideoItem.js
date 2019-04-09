@@ -10,7 +10,7 @@ export default function VideoItem ({ video, onVideoSelect }) {
       <img
       className="ui image"
       src={ video.snippet.thumbnails.medium.url }
-      alt={ video.snippet.description }
+      alt={ video.snippet.title }
       />
       <div className="content" >
         <div className="header">

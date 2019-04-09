@@ -5,6 +5,10 @@ export default class SearchBar extends Component {
     searchTerm: '',
   }
 
+  _onInputChange = () => {
+    
+  }
+
   render() {
     return (
       <div className="search-bar ui segment">

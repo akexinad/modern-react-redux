@@ -1,20 +1,20 @@
 import './VideoItem.css'
 import React from 'react'
 
-export default function VideoItem (props) {
-
-  const { thumbnails, description, title } = props.video.snippet
-
+export default function VideoItem ({ video, onVideoSelect }) {
   return (
-    <div className="video-item item" >
+    <div
+      className="video-item item"
+      onClick={ () => onVideoSelect(video) }
+    >
       <img
       className="ui image"
-      src={ thumbnails.medium.url }
-      alt={ description }
+      src={ video.snippet.thumbnails.medium.url }
+      alt={ video.snippet.description }
       />
       <div className="content" >
         <div className="header">
-        { title }
+        { video.snippet.title }
         </div>
       </div>
     </div>

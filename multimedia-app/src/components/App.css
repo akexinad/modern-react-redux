@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 6em;
+}
+
+.app-name {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  max-height: 10em;
+  margin-right: 2em;
+}

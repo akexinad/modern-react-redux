@@ -1,3 +1,4 @@
+import './App.css'
 import React, { Component } from 'react'
 
 import youtube from './api/youtube.js'
@@ -38,6 +39,13 @@ export default class App extends Component {
   render() {
     return (
       <div className="ui container">
+        <div className="app-name">
+          <img
+            className="logo"
+            src="./images/tu-tubo.png"
+            alt="logo"/>
+          <h1>TuTubo</h1>
+        </div>
         <SearchBar
           onFormSubmit={ this._onFormSubmit }
         />

@@ -25,13 +25,9 @@ export default class App extends Component {
   }
 
   _onVideoSelect = (video) => {
-    console.log('From the App', video);
     this.setState({
       selectedVideo: video
     })
-
-    console.log('THIS.STATE.', this.state.selectedVideo);
-
   }
 
   render() {
@@ -40,13 +36,21 @@ export default class App extends Component {
         <SearchBar
           onFormSubmit={ this._onFormSubmit }
         />
-        <VideoDetail
-          video={ this.state.selectedVideo }
-        />
-        <VideoList
-          videoList={ this.state.videoList }
-          onVideoSelect={ this._onVideoSelect }
-        />
+      <div className="ui grid">
+        <div className="ui row">
+          <div className="eleven wide column">
+            <VideoDetail
+              video={ this.state.selectedVideo }
+              />
+          </div>
+          <div className="five wide column">
+            <VideoList
+              videoList={ this.state.videoList }
+              onVideoSelect={ this._onVideoSelect }
+              />
+          </div>
+        </div>
+      </div>
       </div>
     )
   }

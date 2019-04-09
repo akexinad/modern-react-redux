@@ -6,7 +6,7 @@ import ImageCard from './ImageCard.js'
 
 export default function ImageList(props) {
 
-  const images = props.images.map( image => {
+  const renderImages = props.images.map( image => {
     return (
       <ImageCard
         key={ image.id }
@@ -17,7 +17,7 @@ export default function ImageList(props) {
 
   return (
     <div className="image-list">
-      { images }
+      { renderImages }
     </div>
   )
 }

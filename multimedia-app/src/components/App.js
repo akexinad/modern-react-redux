@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import youtube from './api/youtube.js'
 
 import SearchBar from './SearchBar.js'
+import VideoList from './VideoList.js'
 
 export default class App extends Component {
   state = {
@@ -28,6 +29,9 @@ export default class App extends Component {
       <div className="ui container">
         <SearchBar
           onFormSubmit={ this._onSearchTermSubmit }
+        />
+        <VideoList
+          videoList={ this.state.videoList }
         />
       </div>
     )

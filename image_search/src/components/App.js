@@ -27,7 +27,7 @@ export default class App extends Component {
     return (
       <div
       className="ui container"
-      style={{ marginTop: '2em' }}
+      style={{ marginTop: '10px' }}
       >
       <SearchBar
         onSubmit={ this._onSearchSubmit }

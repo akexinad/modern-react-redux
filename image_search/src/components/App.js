@@ -6,8 +6,12 @@ import { accessKey, secretKey } from '../unsplash.js'
 import SearchBar from './SearchBar.js'
 
 export default class App extends Component {
-  async _onSearchSubmit(inputTerm) {
-    const res = await axios
+  state = {
+    images: [],
+  }
+
+  _onSearchSubmit = async (inputTerm) => {
+    const response = await axios
       .get('https://api.unsplash.com/search/photos', {
         params: {
           query: inputTerm,
@@ -17,7 +21,9 @@ export default class App extends Component {
         }
       })
 
-    console.log(res.data.results);
+    this.setState({
+      images: response.data.results
+    })
   }
 
   render() {
@@ -29,6 +35,7 @@ export default class App extends Component {
       <SearchBar
         onSubmit={ this._onSearchSubmit }
       />
+      Found: { this.state.images.length }
       </div>
     )
   }

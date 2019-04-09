@@ -1,3 +1,4 @@
+import './VideoItem.css'
 import React from 'react'
 
 export default function VideoItem (props) {
@@ -5,7 +6,7 @@ export default function VideoItem (props) {
   const { thumbnails, description, title } = props.video.snippet
 
   return (
-    <div className="item" >
+    <div className="video-item item" >
       <img
       className="ui image"
       src={ thumbnails.medium.url }

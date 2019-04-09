@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 
-import { accessKey, secretKey } from '../unsplash.js'
+import unsplash from '../api/unsplash.js'
 
 import SearchBar from './SearchBar.js'
 
@@ -11,13 +10,10 @@ export default class App extends Component {
   }
 
   _onSearchSubmit = async (inputTerm) => {
-    const response = await axios
-      .get('https://api.unsplash.com/search/photos', {
+    const response = await unsplash
+      .get('/search/photos', {
         params: {
-          query: inputTerm,
-        },
-        headers: {
-          Authorization: `Client-ID ${ accessKey }`,
+          query: inputTerm
         }
       })
 

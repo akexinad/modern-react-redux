@@ -1,10 +1,20 @@
 import React from 'react';
 
 export default function ImageList(props) {
-  console.log(props.images)
+
+  const images = props.images.map( ({ id, urls, alt_description }) => {
+    return (
+      <img
+        key={ id }
+        src={ urls.regular }
+        alt={ alt_description }
+      />
+    )
+  })
+
   return (
     <div>
-      ImageList Component
+      { images }
     </div>
   )
 }

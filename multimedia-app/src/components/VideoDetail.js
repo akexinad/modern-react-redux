@@ -17,6 +17,8 @@ export default function VideoDetail ({ video }) {
         <iframe
           title="video player"
           src={ videoSrc }
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
         >
         </iframe>
       </div>

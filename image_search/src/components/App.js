@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import unsplash from '../api/unsplash.js'
 
 import SearchBar from './SearchBar.js'
+import ImageList from './ImageList.js'
 
 export default class App extends Component {
   state = {
@@ -31,7 +32,9 @@ export default class App extends Component {
       <SearchBar
         onSubmit={ this._onSearchSubmit }
       />
-      Found: { this.state.images.length }
+      <ImageList
+        images={ this.state.images }
+      />
       </div>
     )
   }

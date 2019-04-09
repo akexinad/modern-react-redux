@@ -15,6 +15,7 @@ export default class SearchBar extends Component {
     event.preventDefault()
 
     // TODO: Make sure we call callback from parent component
+    this.props.onFormSubmit(this.state.searchTerm)
   }
 
   render() {

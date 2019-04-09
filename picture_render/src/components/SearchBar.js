@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 
 export default class SearchBar extends Component {
 
-  // NOTE: JOEL always started his event handlers with an underscore
-  _onInputChange(e) {
-    console.log(e.target.value)
+  constructor() {
+    super()
+    this.state = ({
+      term: '',
+    })
   }
 
   render() {
@@ -14,8 +16,9 @@ export default class SearchBar extends Component {
           <label htmlFor="">Image Search</label>
           <input
             type="text"
-            onChange={ this._onInputChange }
-            // onChange={ (e) => console.log(e.target.value) }
+            // onChange={ this._onInputChange }
+            value={ this.state.term }
+            onChange={ (e) => this.setState({ term: e.target.value }) }
           />
         </form>
       </div>

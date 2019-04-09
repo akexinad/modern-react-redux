@@ -15,6 +15,7 @@ export default class SearchBar extends Component {
           <input
             type="text"
             onChange={ this._onInputChange }
+            // onChange={ (e) => console.log(e.target.value) }
           />
         </form>
       </div>

@@ -3,16 +3,16 @@ import { combineReducers } from 'redux'
 const songsReducer = () => {
   return [
     {
-      title: 'the end',
+      title: 'The End',
       duration: '11:41'
     }, {
-      title: 'little wing',
+      title: 'Little Wing',
       duration: '2.26'
     }, {
-      title: 'ho perso le parole',
+      title: 'Ho Perso Le Parole',
       duration: '4.28'
     }, {
-      title: 'quando tocca a te',
+      title: 'Quando Tocca A Te',
       duration: '5:31'
     }
   ]

@@ -1,9 +1,11 @@
 import React from 'react'
 
+import SongList from './SongList.js'
+
 export default function App () {
   return (
     <div>
-      <h1>Hello World</h1>
+      <SongList />
     </div>
   )
 }

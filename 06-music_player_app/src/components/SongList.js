@@ -1,16 +1,21 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import { selectSong } from '../actions'
+
 class SongList extends Component {
   renderSongList() {
     return this.props.songs.map( (song) => {
       return (
         <div
-        className="item"
-        key={ song.title }
+          className="item"
+          key={ song.title }
         >
           <div className="right floated content">
-            <button className="ui button primary">
+            <button
+              className="ui button primary"
+              onClick={ () => this.props.selectSong(song) }
+            >
               Select
             </button>
           </div>
@@ -33,11 +38,14 @@ class SongList extends Component {
 
 // State holds our song list and selected song which is in our reducer
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     songs: state.songs
   }
 }
 
-export default connect(mapStateToProps)(SongList)
+export default connect(mapStateToProps, {
+  selectSong
+})(SongList)
 // Connect is actually a react component in the world redux
 // The connect component gets out our list of songs from our Provider component [also a component in the world of redux]

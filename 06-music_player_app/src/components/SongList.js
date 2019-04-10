@@ -38,14 +38,15 @@ class SongList extends Component {
 
 // State holds our song list and selected song which is in our reducer
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     songs: state.songs
   }
 }
 
-export default connect(mapStateToProps, {
-  selectSong
-})(SongList)
+// NOTE: DISPATCHING HAPPENS HERE IN THE CONNECTION
+export default connect(
+  mapStateToProps,
+  { selectSong }
+)(SongList)
 // Connect is actually a react component in the world redux
 // The connect component gets out our list of songs from our Provider component [also a component in the world of redux]

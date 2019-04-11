@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import jsonPlaceholder from '../api/jsonPlaceholder.js'
 
 export const fetchPosts = () => async (dispatch) => {
@@ -9,11 +10,14 @@ export const fetchPosts = () => async (dispatch) => {
   })
 }
 
-export const fetchUser = (id) => async (dispatch) => {
+export const fetchUser = (id) => (dispatch) => _fetchUser(id, dispatch)
+
+// The _ means that this is a PRIVATE FUNCTION
+const _fetchUser = _.memoize( async (id, dispatch) => {
   const response = await jsonPlaceholder.get(`/users/${ id }`)
 
   dispatch({
     type: 'FETCH_USER',
     payload: response.data
   })
-}
+})

@@ -9,7 +9,7 @@ import jsonPlaceholder from '../api/jsonPlaceholder.js'
 //   uniqUserIds.forEach( (id) => dispatch(fetchUser(id)) )
 // }
 
-// OPTIONAL ACTION CREATOR
+// OPTIONAL ACTION CREATOR. MUCH MORE ELEGANT IMO
 export const fetchPostsAndUsers = () => async (dispatch, getState) => {
   await dispatch(fetchPosts())
 

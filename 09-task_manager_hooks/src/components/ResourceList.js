@@ -12,7 +12,7 @@ export default function ResourceList({ resource }) {
 
   useEffect( () => {
     fetchResource(resource)
-  }, [])
+  }, [resource])
 
   const renderPosts = () => {
     if (resources.length === 0) {

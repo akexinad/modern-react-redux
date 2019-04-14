@@ -2,6 +2,7 @@ import React from 'react'
 
 import UserCreate from './UserCreate.js'
 import LanguageContext from '../contexts/LanguageContext.js'
+import ColorContext from '../contexts/ColorContext.js'
 
 export default class App extends React.Component {
   state = {
@@ -33,7 +34,9 @@ export default class App extends React.Component {
           />
         </div>
         <LanguageContext.Provider value={ this.state.language }>
-          <UserCreate />
+          <ColorContext.Provider value="green">
+            <UserCreate />
+          </ColorContext.Provider>
         </LanguageContext.Provider>
       </div>
     )

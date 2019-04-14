@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-export default function ResourceList({ resource }) {
+const useResources = (resource) => {
   const [ resources, setResources ] = useState([])
 
   useEffect( () => {
@@ -12,6 +12,12 @@ export default function ResourceList({ resource }) {
     })(resource)
   },
   [resource])
+
+  return resources
+}
+
+export default function ResourceList({ resource }) {
+  const resources = useResources(resource)
 
   const renderPosts = () => {
     if (resources.length === 0) {

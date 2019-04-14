@@ -6,12 +6,24 @@ export default class Button extends React.Component {
   // NOTE: contextType is a special variable name
   static contextType = LanguageContext
 
+  renderText() {
+    if (this.context === 'english') {
+      return 'Submit'
+    } else if (this.context === 'italian') {
+      return 'Inviare'
+    } else if (this.context === 'dutch') {
+      return 'Voorleggen'
+    }
+  }
+
   render() {
-    console.log(this.context);
     return (
       <button className="ui button primary">
-        Submit
+        { this.renderText() }
       </button>
     )
   }
 }
+
+
+// const text = this.context === 'english' ? 'Submit' : 'Voorleggen'

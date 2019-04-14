@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import ResourceList from './ResourceList.js'
 
 export default function App() {
-  const [resource, setResource] = useState('Click Button!')
+  const [resource, setResource] = useState('posts')
 
   return (
     <div>

@@ -6,11 +6,11 @@ export default class Field extends React.Component {
   static contextType = LanguageContext
 
   renderText() {
-    if (this.context === 'english') {
+    if (this.context.language === 'english') {
       return 'Name'
-    } else if (this.context === 'italian') {
+    } else if (this.context.language === 'italian') {
       return 'Nome'
-    } else if (this.context === 'dutch') {
+    } else if (this.context.language === 'dutch') {
       return 'Naam'
     }
   }
